@@ -29,4 +29,3 @@ class Doubts(models.Model):
     answer_by = models.ForeignKey(Trainer, on_delete=models.CASCADE)
     when_asked = models.DateTimeField(auto_now=False, auto_now_add=False)
     status = models.CharField(max_length=20, choices=status_choice,default='Unsolved')
-
