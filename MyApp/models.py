@@ -12,8 +12,7 @@ class Trainer(models.Model):
     contact_no = models.CharField(max_length=13)
     gender = models.CharField(max_length=10)
 
-    # trainer_name = models.Manager.all()
-    # print(trainer_name)
+
 class Trainee(models.Model):
     name = models.CharField(max_length=20)
     age = models.IntegerField()

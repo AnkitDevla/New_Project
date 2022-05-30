@@ -1,8 +1,10 @@
 from django.contrib import admin
-from . import models
+from .models import Trainee, Trainer
 
+@admin.register(Trainer)
+class TrainerAdmin(admin.ModelAdmin):
+    list_Trainer = ['name','age','email','contact_no','gender']
 
-# class trainer_Data(admin.ModelAdmin):
-#     Trainer_List = ('name','age','email','contact_no','gender')
-
-# admin.site.register(Trainer,trainer_Data)
+@admin.register(Trainee)    
+class TraineeAdmin(admin.ModelAdmin):
+    list_Trainee = ['name','age','email','contact_no','exp']
