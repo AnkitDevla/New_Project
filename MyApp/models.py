@@ -1,11 +1,10 @@
 from django.db import models
 
+
+
 status_choice = [("SOLVED","solved"),
             ("UNSOLVED","unsolved"),
 ]
-
-
-
 class Trainer(models.Model):
     name = models.CharField(max_length=200)
     age = models.IntegerField()
@@ -13,6 +12,8 @@ class Trainer(models.Model):
     contact_no = models.CharField(max_length=13)
     gender = models.CharField(max_length=10)
 
+    # trainer_name = models.Manager.all()
+    # print(trainer_name)
 class Trainee(models.Model):
     name = models.CharField(max_length=20)
     age = models.IntegerField()
@@ -29,3 +30,4 @@ class Doubts(models.Model):
     answer_by = models.ForeignKey(Trainer, on_delete=models.CASCADE)
     when_asked = models.DateTimeField(auto_now=False, auto_now_add=False)
     status = models.CharField(max_length=20, choices=status_choice,default='Unsolved')
+
