@@ -1,7 +1,5 @@
 from django.db import models
 
-
-
 status_choice = [("SOLVED","solved"),
             ("UNSOLVED","unsolved"),
 ]
