@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from MyApp.models import Trainer, Trainee
+from MyApp.models import  Doubts, Trainer, Trainee
 
-def home(request):
-    trainer_Data = Trainer.objects.all()
-    for i in trainer_Data:
-        print(i.name)
+
+    # trainer_Data = Trainer.objects.all()
+    # for data in trainer_Data:
+    #     print(data.name)
 
     # if(request.method == "POST"):
         # trainer_Data = Trainer() 
@@ -19,9 +19,17 @@ def home(request):
 
     
 
+def home(request):
+    # trainer_Data = Trainer.objects.all()
+
+    no_of_count = Doubts.objects.filter(question_from__id= 13).count()
+    # for dat in no_of_count:
+    print(no_of_count)
+
+
+
     # trainer_Data = Trainer.objects.only("name")
     # print(trainer_Data)
-    # trainer_Data = Trainer.objects.all()
     # for trainer in trainer_Data:
     #     print(trainer.email)
     # trainer_Data = Trainer.objects.filter(age=70)
@@ -44,6 +52,11 @@ def home(request):
 
     # exclude age=30 from table
     # trainer_Data = Trainer.objects.exclude(age=30)
+    
+    
+    # doubts_Data = Doubts.objects.filter(answer_by__id=30)
+    # for d in doubts_Data:
+    #     print(d.name)
 
     # reverse the order 
     # trainer_Data = Trainer.objects.order_by('age').reverse()[0:5]
@@ -61,7 +74,8 @@ def home(request):
 
     # print the data
     # print(trainer_Data)
-    return HttpResponse("This is Home",{'Trainer':trainer_Data})
+    return HttpResponse("This is Home",{'Trainer':no_of_count})
+    # return render (request, 'index.html')
 
 
 
