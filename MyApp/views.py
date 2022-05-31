@@ -20,13 +20,20 @@ from MyApp.models import  Doubts, Trainer, Trainee
     
 
 def home(request):
-    # trainer_Data = Trainer.objects.all()
+    trainer_Data = Trainer.objects.all()
 
-    no_of_count = Doubts.objects.filter(question_from__id= 13).count()
-    # for dat in no_of_count:
-    print(no_of_count)
+    # no_of_count = Doubts.objects.filter(question_from__id= 12).count()
+    # print(no_of_count)
 
+    # trainer_Data = Trainer(name='Deepak', age=34,email = 'deepak@gmail.com', contact_no=9857473748,gender= 'male')
+    # trainer_Data.save()
 
+    # trainer_Data = Trainer.objects.get(id=119)
+    # trainer_Data.age = "22"
+    # trainer_Data.save()
+
+    # trainer_Data = Trainer.objects.get(id=121)
+    # trainer_Data.delete()
 
     # trainer_Data = Trainer.objects.only("name")
     # print(trainer_Data)
@@ -74,7 +81,7 @@ def home(request):
 
     # print the data
     # print(trainer_Data)
-    return HttpResponse("This is Home",{'Trainer':no_of_count})
+    return HttpResponse("This is Home",{'Trainer':trainer_Data})
     # return render (request, 'index.html')
 
 
