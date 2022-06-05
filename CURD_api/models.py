@@ -1,8 +1,11 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 status_choice = [("SOLVED","solved"),
             ("UNSOLVED","unsolved"),
 ]
+
+
 class Trainer(models.Model):
     name = models.CharField(max_length=200)
     age = models.IntegerField()

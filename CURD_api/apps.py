@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class MyapiConfig(AppConfig):
+class CurdApiConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'myApi'
+    name = 'CURD_api'

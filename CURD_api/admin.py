@@ -14,8 +14,8 @@ class TraineeAdmin(admin.ModelAdmin):
     list_Trainee = ['name','age','email','contact_no','exp']
 
 
-# @admin.register(Doubts)
-# class TraineeAdmin(admin.ModelAdmin):
-#     list_Trainee = ['name','question','answer','question_from','answer_by','when_asked','status']
+@admin.register(Doubts)
+class TraineeAdmin(admin.ModelAdmin):
+    list_Trainee = ['name','question','answer','question_from','answer_by','when_asked','status']
 
 

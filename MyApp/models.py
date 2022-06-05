@@ -1,8 +1,11 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 status_choice = [("SOLVED","solved"),
             ("UNSOLVED","unsolved"),
 ]
+
+
 class Trainer(models.Model):
     name = models.CharField(max_length=200)
     age = models.IntegerField()
@@ -28,3 +31,4 @@ class Doubts(models.Model):
     when_asked = models.DateTimeField(auto_now=False, auto_now_add=False)
     status = models.CharField(max_length=20, choices=status_choice,default='Unsolved')
 
+    

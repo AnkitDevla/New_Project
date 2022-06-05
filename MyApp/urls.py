@@ -1,8 +1,8 @@
-from django.urls import path,include
+from django.urls import path, include
 from . import views
-
+from .views import Trainer,Trainee
 
 
 urlpatterns = [
-    path('',views.home),
+    path('trainer/',views.trainerapi)
 ]

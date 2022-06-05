@@ -1,18 +1,12 @@
 from django.contrib import admin
-from django.urls import path,include
 from django.urls import include, path
-from rest_framework import routers
-from myApi import views
-
-
-router = routers.DefaultRouter()
-router.register(r'Trainers', views.TrainerViewSet)
-router.register(r'Trainees', views.TraineeViewSet)
+from MyApp import views
 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include("MyApp.urls")),
-    path('myApi/', include('myApi.urls')),
+    path('trainerdata/',include('CURD_api.urls')),
+    path('traineedata/',include('CURD_api.urls')),
+    path('doubtsdata/',include('CURD_api.urls')),
 ]
