@@ -1,13 +1,11 @@
 from django.contrib import admin
 from django.urls import include, path
-from MyApp import views
-
-
+from doubt import views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('doubts.urls')),
-    path('',include('doubts.urls')),
-    path('',include('doubts.urls')),
+    path('',include('doubt.urls')),
+    path('',include('doubt.urls')),
+    path('',include('doubt.urls')),
 ]
