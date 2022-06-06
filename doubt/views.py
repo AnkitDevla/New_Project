@@ -58,3 +58,29 @@ def trainee_post(request):
     serializer.is_valid(raise_exception=True)
     serializer.save()
     return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+
+
+@api_view(['GET', 'PUT', 'DELETE'])
+def doubt(request, id):
+    doubt = get_object_or_404(Doubts, pk=id)
+
+    if request.method == 'GET':
+        serializer = DoubtsSerializer(doubt)
+        return Response(serializer.data)
+    elif request.method == 'PUT':
+        serializer = DoubtsSerializer(doubt, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+    elif request.method == 'DELETE':
+        doubt.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+@api_view(['POST'])
+def doubt_post(request):
+    serializer = DoubtsSerializer(doubt, data=request.data)
+    serializer.is_valid(raise_exception=True)
+    serializer.save()
+    return Response(serializer.data, status=status.HTTP_201_CREATED)
