@@ -1,7 +1,7 @@
 from django.urls import path, include
-from doubts.models import Doubts,Trainee,Trainer
+from doubts.models import Doubts
 from . import views
-from doubts.views import trainerapi,traineeapi,doubtsapi
+from doubts.views import Trainer,Trainee,Doubts
 
 
 urlpatterns = [

@@ -1,4 +1,4 @@
-from .models import Trainer,Trainee 
+from doubts.models import Trainer,Trainee,Doubts
 from rest_framework import serializers
 
 

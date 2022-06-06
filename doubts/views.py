@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .serializer import TrainerSerializer,TraineeSerializer,DoubtsSerializer
+# from django.shortcuts import render
+from doubts.serializer import TrainerSerializer,TraineeSerializer,DoubtsSerializer
 from MyApp.models import Trainer,Trainee,Doubts
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -8,7 +8,7 @@ from rest_framework import status
 
 
 @api_view(['GET', 'PUT','POST', 'DELETE'])
-def trainerapi(request):
+def trainerapi(request,id):
     if request.method == "GET":
         trainers = Trainer.objects.all()
         serializer = TrainerSerializer(trainers,many=True)
