@@ -5,7 +5,6 @@ status_choice = [("SOLVED","solved"),
             ("UNSOLVED","unsolved"),
 ]
 
-
 class Trainer(models.Model):
     name = models.CharField(max_length=200)
     age = models.IntegerField()
@@ -13,6 +12,8 @@ class Trainer(models.Model):
     contact_no = models.CharField(max_length=13)
     gender = models.CharField(max_length=10)
 
+    def __str__(self):
+        return self.name
 
 class Trainee(models.Model):
     name = models.CharField(max_length=20)
@@ -21,6 +22,8 @@ class Trainee(models.Model):
     contact_no = models.CharField(max_length=13)
     exp = models.PositiveIntegerField()
 
+    def __str__(self):
+        return self.name
 
 class Doubts(models.Model):
     name = models.CharField(max_length=20)

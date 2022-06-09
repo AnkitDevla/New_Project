@@ -13,8 +13,11 @@ class TraineeSerializer(serializers.ModelSerializer):
         model = Trainee
         fields = ['name', 'age', 'email', 'contact_no','exp']
 
-
-class DoubtsSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Doubts
-        fields = ['name', 'question', 'answer', 'question_from','answer_by','when_asked','status']
+class DoubtsSerializer(serializers.Serializer):
+    name = serializers.CharField()
+    question = serializers.CharField()
+    answer = serializers.CharField()
+    question_from = serializers.StringRelatedField()
+    answer_by = serializers.StringRelatedField()
+    when_asked = serializers.DateTimeField()
+    status = serializers.CharField()

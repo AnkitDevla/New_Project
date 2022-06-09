@@ -26,7 +26,7 @@ def trainer(request, id):
 
 @api_view(['POST'])
 def trainer_post(request):
-    serializer = TrainerSerializer(trainer, data=request.data)
+    serializer = TrainerSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
     serializer.save()
     return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -52,7 +52,7 @@ def trainee(request, id):
 
 @api_view(['POST'])
 def trainee_post(request):
-    serializer = TraineeSerializer(trainee, data=request.data)
+    serializer = TraineeSerializer( data=request.data)
     serializer.is_valid(raise_exception=True)
     serializer.save()
     return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -78,7 +78,7 @@ def doubt(request, id):
 
 @api_view(['POST'])
 def doubt_post(request):
-    serializer = DoubtsSerializer(doubt, data=request.data)
+    serializer = DoubtsSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
     serializer.save()
     return Response(serializer.data, status=status.HTTP_201_CREATED)
