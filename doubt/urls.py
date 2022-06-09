@@ -1,6 +1,6 @@
 from django.urls import path, include
 from doubt.models import Doubts
-from . import views``
+from . import views
 from doubt.views import Trainer,Trainee,Doubts
 
 
